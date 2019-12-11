@@ -27,8 +27,17 @@ class graph_io {
                 static
                 int readGraphWeighted(graph_access & G, const std::string & filename);
 
+                static 
+                int readGraphWeighted(graph_access & G, const std::string & filename, std::string & comments);
+
                 static
                 int writeGraphWeighted(graph_access & G, const std::string & filename);
+
+                static
+                int writeGraphNodeWeighted(graph_access & G, std::string filename);
+
+                static
+                int writeGraphNodeWeighted(graph_access & G, std::ofstream & file);      
 
                 static
                 int writeGraph(graph_access & G, const std::string & filename);

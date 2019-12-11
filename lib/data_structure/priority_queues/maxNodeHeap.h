@@ -83,6 +83,8 @@ class maxNodeHeap : public priority_queue_interface {
                 void changeKey(NodeID node, Gain gain) override;
                 Gain getKey(NodeID node) override;
 
+                void clear();
+
         private:
                 std::vector< PQElement >               m_elements;      // elements that contain the data
                 std::unordered_map<NodeID, int>   m_element_index; // stores index of the node in the m_elements array
@@ -282,6 +284,10 @@ inline Gain maxNodeHeap::getKey(NodeID node) {
 
 inline bool maxNodeHeap::contains(NodeID node) {
        return m_element_index.find(node) != m_element_index.end();
+}
+
+inline void maxNodeHeap::clear() {
+       return m_elements.clear();
 }
 
 #endif
